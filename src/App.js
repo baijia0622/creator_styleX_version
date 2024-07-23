@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import * as stylex from '@stylexjs/stylex';
+
+const styles = stylex.create({
+  container: {
+    backgroundColor: 'lightblue',
+    padding: '20px',
+  },
+  text: {
+    color: 'darkblue',
+    fontSize: '18px',
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div {...stylex.props(styles.container)}>
+      <p {...stylex.props(styles.text)}>Hello, StyleX!</p>
     </div>
   );
 }
